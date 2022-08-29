@@ -3,7 +3,7 @@
 namespace Yoeriboven\LaravelLogDb;
 
 use Monolog\Handler\AbstractProcessingHandler;
-use Yoeriboven\LaravelLogDb\Models\LogMessage;
+use Yoeriboven\LaravelLogDb\Models\HttpRequestLog;
 
 class DatabaseHandler extends AbstractProcessingHandler
 {
@@ -12,7 +12,7 @@ class DatabaseHandler extends AbstractProcessingHandler
      */
     protected function write(array $record): void
     {
-        LogMessage::create([
+        HttpRequestLog::create([
             'level' => $record['level'],
             'level_name' => $record['level_name'],
             'message' => $record['message'],

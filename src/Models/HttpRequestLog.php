@@ -1,12 +1,13 @@
 <?php
-
 namespace Yoeriboven\LaravelLogDb\Models;
 
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Model;
 
-class LogMessage extends Model
+class HttpRequestLog extends Model
 {
+    protected $table = 'http_requests_log';
+    
     /**
      * The attributes that aren't mass assignable.
      *
